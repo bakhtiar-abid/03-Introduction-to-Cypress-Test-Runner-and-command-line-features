@@ -1,12 +1,14 @@
 describe("My First Test Suite", () => {
-   it("My FirstTest case", () => {
+   it("verify title-positive", () => {
       //test step
-      cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
+      cy.visit("https://opensource-demo.orangehrmlive.com/");
+      cy.title().should('eq', "OrangeHRM");
    });
 
-   // it('My SecondTest case', ()=>{
-
-   // //test step
-
-   // })
+   it("verify title-negetive test", () => {
+      //test step
+      cy.visit("https://opensource-demo.orangehrmlive.com/");
+      cy.title().should('eq', "OrangeHRM12344");
+   });
+   // every test block is representing the test case
 });
