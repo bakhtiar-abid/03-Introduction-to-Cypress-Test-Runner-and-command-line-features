@@ -30,7 +30,7 @@ describe("Assertions Demo", ()=>{
         // .should('contain', 'orangehrm')
 
 
-
+         //checking the url link using assertions
         cy.url()
            .should("include", "orangehrmlive.com")
            .and(
@@ -72,7 +72,7 @@ describe("Assertions Demo", ()=>{
       cy.get("button[type='submit']").click()
 
 
-      let expName = "xyz";
+      let expName = "Garnett Douglas";
 
       cy.get(".oxd-userdropdown-name").then( (x)=>{
          let actName = x.text();
