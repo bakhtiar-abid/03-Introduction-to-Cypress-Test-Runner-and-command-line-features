@@ -11,4 +11,5 @@ describe("XPathLocators", () => {
       cy.xpath("//div[@class='features_items']").xpath("./div").should("have.length", 35);
       //should is an assertion, validating whether have exact same product length or not
    });
+   
 });
