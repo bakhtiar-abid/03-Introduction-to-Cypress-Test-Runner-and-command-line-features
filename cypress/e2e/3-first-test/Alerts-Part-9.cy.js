@@ -75,6 +75,8 @@ describe("Alerts", () => {
       cy.get("#result").should("have.text", "You entered: welcome");
    });
 
+
+   //should have some fix about this code
    //using cancel button
    it("JS Prompt Alert - Cancel Button", () => {
       cy.visit("https://the-internet.herokuapp.com/javascript_alerts");
