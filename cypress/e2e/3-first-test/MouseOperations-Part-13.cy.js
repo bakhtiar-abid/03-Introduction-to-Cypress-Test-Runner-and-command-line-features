@@ -69,6 +69,20 @@ describe("Mouse Operations", () => {
     });
 
     it.only("Scrolling Page", () => {
-        
+        cy.visit(
+           "https://www.countries-ofthe-world.com/flags-of-the-world.html"
+        );
+
+        //USA Flag
+        cy.get(":nth-child(2) > tbody > :nth-child(96) > :nth-child(1) > img").scrollIntoView({duration: 3000})
+        cy.get(":nth-child(2) > tbody > :nth-child(96) > :nth-child(1) > img").should("be.visible");
+
+       cy.get(':nth-child(1) > tbody > :nth-child(4) > :nth-child(1) > img').scrollIntoView({duration:3000})
+
+      cy.get(':nth-child(1) > tbody > :nth-child(4) > :nth-child(1) > img').should("be.visible")
+      
+       cy.get("div#footer").scrollIntoView({ duration: 3000 });
     });
+
+   
 });
