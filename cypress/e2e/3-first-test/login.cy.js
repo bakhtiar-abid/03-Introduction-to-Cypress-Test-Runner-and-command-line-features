@@ -10,5 +10,7 @@ Cypress.on("uncaught:exception", (err, runnable) => {
         cy.get("[name='password']").type("123456");
 
         cy.get(".text-white").click();
+
+
     });
  })
