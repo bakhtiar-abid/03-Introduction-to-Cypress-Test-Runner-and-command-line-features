@@ -62,7 +62,7 @@ describe('Handle Table', () => {
               cy.log("Active page is ===> " + p);
               cy.get("ul[class='pagination']>li:nth-child(" + p + ")").click();
               cy.wait(3000);
-
+           ]]
               cy.get(
                  "table[class='table table-bordered table-hover']>tbody>tr"
               ).each(($row, index, $rows) => {

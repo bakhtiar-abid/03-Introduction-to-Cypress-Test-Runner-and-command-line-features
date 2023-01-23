@@ -3,7 +3,7 @@ require ('@4tw/cypress-drag-drop');
 
 describe("Mouse Operations", () => {
 
-    it("MouseHover", () => {
+    it.only("MouseHover", () => {
         cy.visit("https://demo.opencart.com/");
 
         cy.get("body > main:nth-child(3) > div:nth-child(1) > nav:nth-child(1) > div:nth-child(3) > ul:nth-child(1) > li:nth-child(1) > div:nth-child(2) > div:nth-child(1) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)").should("not.be.visible");
@@ -68,7 +68,7 @@ describe("Mouse Operations", () => {
         cy.get("#box6").drag("#box106");
     });
 
-    it.only("Scrolling Page", () => {
+    it("Scrolling Page", () => {
         cy.visit(
            "https://www.countries-ofthe-world.com/flags-of-the-world.html"
         );
