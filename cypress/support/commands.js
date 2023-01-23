@@ -37,3 +37,67 @@ Cypress.Commands.add('getIframe', (iframe)=>{
 })
 
 
+//custom command for clicking on link using label
+Cypress.Commands.add('clickLink', (label)=>{
+    cy.get('a').contains(label).click();
+})
+
+
+
+//Over Write contains()
+// Cypress.Commands.overwrite(
+//    "contains",
+//    (originalFn, subject, filter, text, options = {})=>{
+//     //determine if a filter argument was passed
+//     if(typeof text === 'object'){
+//         options = text
+//         text = filter
+//         filter = undefined
+//     }
+
+//     options.matchCase = false
+
+//     return originalFn(subject, filter, text, options)
+
+//    })
+
+
+  //Custom Command For login
+
+  Cypress.Commands.add("loginApp", (email, password)=>{
+    cy.get("#Email").type(email);
+    cy.get("#Password").type(password);
+    cy.get("form > .buttons > .button-1").click()
+  })
+
+
+  Cypress.Commands.add("register", (firstName, lastName, email, companyName, password)=>{
+     cy.get("#gender-male").click();
+
+     cy.get("#FirstName").type(firstName);
+     cy.get("#LastName").type(lastName);
+     cy.get("select[name='DateOfBirthDay']")
+        .select("10")
+        .should("have.value", "10");
+
+     cy.get("select[name='DateOfBirthMonth']")
+        .select("April")
+        .should("have.value", "4");
+
+     cy.get("select[name='DateOfBirthYear']")
+        .select("1998")
+        .should("have.value", "1998");
+
+     cy.get("#Email").type(email);
+
+     cy.get("#Company").type(companyName);
+
+     //password
+
+     cy.get("#Password").type(password);
+     cy.get("#ConfirmPassword").type(password);
+
+     cy.get("#register-button").click();
+  })
+
+
